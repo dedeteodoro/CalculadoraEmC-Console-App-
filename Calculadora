@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculadoraSimples
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Exibe as opções de operação para o usuário
+            Console.WriteLine("Qual operação deseja fazer:");
+            Console.WriteLine("1 - Adição");
+            Console.WriteLine("2 - Subtração");
+            Console.WriteLine("3 - Multiplicação");
+            Console.WriteLine("4 - Divisão \n");
+
+            // Lê a opção de operação escolhida pelo usuário
+            int operacao = int.Parse(Console.ReadLine());
+
+            // Solicita o primeiro número ao usuário
+            Console.WriteLine("Digite o primeiro número: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            // Solicita o segundo número ao usuário
+            Console.WriteLine("Digite o segundo número: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            int resultado = 0;
+
+            // Executa a operação escolhida
+            switch (operacao)
+            {
+                case 1:
+                    {
+                        resultado = Adicao(num1, num2);
+                        break;
+                    }
+                case 2:
+                    {
+                        resultado = Subtracao(num1, num2);
+                        break;
+                    }
+                case 3:
+                    {
+                        resultado = Multiplicacao(num1, num2);
+                        break;
+                    }
+                case 4:
+                    {
+                        resultado = Divisao(num1, num2);
+                        break;
+                    }
+                default:
+                    Console.WriteLine("Número inválido, digite outro número.");
+                    break;
+            }
+
+            // Exibe o resultado da operação
+            Console.WriteLine("O resultado da operação entre o número {0} e {1} é: {2}", num1, num2, resultado);
+            Console.ReadLine();
+        }
+
+        // Função para realizar a adição
+        public static int Adicao(int numero1, int numero2)
+        {
+            int result = numero1 + numero2;
+            return result;
+        }
+
+        // Função para realizar a subtração
+        public static int Subtracao(int numero1, int numero2)
+        {
+            int result = numero1 - numero2;
+            return result;
+        }
+
+        // Função para realizar a multiplicação
+        public static int Multiplicacao(int numero1, int numero2)
+        {
+            int result = numero1 * numero2;
+            return result;
+        }
+
+        // Função para realizar a divisão
+        public static int Divisao(int numero1, int numero2)
+        {
+            int result = numero1 / numero2;
+            return result;
+        }
+    }
+}
